@@ -58,13 +58,13 @@ Actively in progress — `test2.ipynb` extends the initial experiments with furt
 
 ## Result section
 
-test1 trained on `house_prices.csv` with steps=1e5, training_rate=3e-5
+test1 trained on `house_prices.csv` with steps=1e5, training_rate=3e-5 and optimized loss function value to approximately 0.2598
 
 **Loss vs Iterations** - Model converges smoothly enough, without big jumpes over local minimum
-![Loss vs Iterations](loss_vs_iterations.png)
+![Loss vs Iterations](images/loss_vs_iterations.png)
 
 **Parameters vs Iterations** - The parameters jumps over their local minimun, but eventually riching it, dont really affect training
-![Parameters vs Iterations](parameters_vs_iterations.png)
+![Parameters vs Iterations](images/parameters_vs_iterations.png)
 
 **Predictions**
 ```
