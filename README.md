@@ -25,11 +25,15 @@ The model is trained using batch gradient descent to minimize mean squared error
 ## Example Usage
 
 ```python
-from linearreg import zscore_normalize, optimize_parameters, f
+from linearreg import optimize_parameters, f, zscore_normalize, inverse_transform
+import numpy as np
+
+X_train = np.array([[1, 2, 3], [10, 20, 30], [5, 10, 15]])
+y_true = np.array([feature1*5 + feature2*1.5 + feature3*(-0.5) for feature1, feature2, feature3 in X_train])
 
 # Normalize features and target
 X_norm, X_mean, X_std = zscore_normalize(X_train)
-y_norm, y_mean, y_std = zscore_normalize(y_train)
+y_norm, y_mean, y_std = zscore_normalize(y_true)
 
 # Train
 w, b, J_history, w_history, b_history = optimize_parameters(
@@ -41,7 +45,11 @@ w, b, J_history, w_history, b_history = optimize_parameters(
 )
 
 # Predict
-y_pred = f(X_norm, w, b)
+y_norm_pred = f(X_norm, w, b)
+y_pred = inverse_transform(y_norm_pred, y_mean, y_std)
+
+print("True:", y_true)
+print("Prediction:", y_pred)
 ```
 
 ## Motivation
