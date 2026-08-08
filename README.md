@@ -58,4 +58,26 @@ Actively in progress — `test2.ipynb` extends the initial experiments with furt
 
 ## Result section
 
-In progress
+test1 trained on `house_prices.csv` with steps=1e5, training_rate=3e-5
+
+**Loss vs Iterations** - Model converges smoothly enough, without big jumpes over local minimum
+![Loss vs Iterations](loss_vs_iterations.png)
+
+**Parameters vs Iterations** - The parameters jumps over their local minimun, but eventually riching it, dont really affect training
+![Parameters vs Iterations](parameters_vs_iterations.png)
+
+**Predictions**
+```
+True value: 350000.0$, Predicted value: 228487$, Difference: 121513$
+True value: 480500.0$, Predicted value: 575810$, Difference: 95310$
+True value: 465000.0$, Predicted value: 556396$, Difference: 91396$
+True value: 530000.0$, Predicted value: 300172$, Difference: 229828$
+True value: 485000.0$, Predicted value: 496531$, Difference: 11531$
+True value: 575000.0$, Predicted value: 829741$, Difference: 254741$
+True value: 550000.0$, Predicted value: 525535$, Difference: 24465$
+True value: 706000.0$, Predicted value: 813613$, Difference: 107613$
+True value: 585000.0$, Predicted value: 586732$, Difference: 1732$
+True value: 350000.0$, Predicted value: 346055$, Difference: 3945$
+```
+
+
